@@ -10,44 +10,37 @@ public class Solution_0001_TwoSum extends AbstractSolution {
 
     public int[] twoSum(int[] nums, int target) {
         Util.log(Arrays.toString(nums));
+        Util.log(Integer.toString(target));
         return new int[]{1, 2};
     }
 
 
     @Override
-    public TestCase[] getTestCases() {
-        ArrayList<TestCase> testCases = new ArrayList<TestCase>();
+    public ArrayList<AbstractTestCase> getTestCases() {
+        ArrayList<AbstractTestCase> testCases = new ArrayList<>();
 
         // 문제1
         TestCase testCase = new TestCase();
-        testCase.input = new Class[]{Array.class, int.class};
-
-        int[] param1 = new int[]{0,1};
-        int param2 = 9;
-
-        testCase.output = new Object[]{param1,param2};
+        testCase.inputs.add(new int[]{2, 7, 11, 15}); // param1
+        testCase.inputs.add(9); // param2
+        testCase.output.add(new int[]{0, 1});
         testCases.add(testCase);
 
-        return testCases.toArray(TestCase[]::new);
+        return testCases;
     }
 
     public static class TestCase extends AbstractTestCase {
 
-        public Object[] inputTypes;
-        public Object[] input;
-        public int[] output;
-
-        public Object[] getInputTypes() {
-            return this.inputTypes;
-        }
+        public ArrayList<Object> input;
+        public ArrayList<Object> output;
 
         @Override
-        public Object[] getInput() {
+        public ArrayList<Object> getInput() {
             return this.input;
         }
 
         @Override
-        public <T> boolean comp(T result) {
+        public boolean comp(ArrayList<Object> result) {
             return false;
         }
     }
